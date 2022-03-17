@@ -1,6 +1,6 @@
 # snek
 
-The classic game snake, programmed in c#, and played in a terminal.
+The classic game snake, programmed in c# (utilizing SadConsole), and played in a terminal.
 #
   -Arrow keys to control the snake.
   
