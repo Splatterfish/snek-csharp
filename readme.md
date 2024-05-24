@@ -2,9 +2,9 @@
 
 The classic game snake, programmed in c# (utilizing SadConsole), and played in a terminal.
 #
-  -Arrow keys to control the snake.
+  -W,A,S,D keys to control the snake.
   
-  -Eat "apples" to grow longer.
+  -Eat "cherries" to grow longer.
   
   -The longer you are, the faster you move.
   
@@ -14,4 +14,3 @@ The classic game snake, programmed in c# (utilizing SadConsole), and played in a
   
   -How long can you grow? 
   #
-Special thanks to John Mann and Andy Roche for their knowledge and patience.
