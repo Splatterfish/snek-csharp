@@ -12,7 +12,7 @@ namespace snek
         static void Main(string[] args)
         {
             int windowX = 42;
-            int windowY = 26;
+            int windowY = 27;
             int bodycount = 0;
             int fruitTimer;
             List<Coordinate> coordinates = new List<Coordinate>();
@@ -74,14 +74,14 @@ namespace snek
 
                 //draw a splash screen
                 Console.Clear();
-                WriteLineAt(@"                      __    ", 5, 2);
-                WriteLineAt(@"  ______ ____   ____ |  | __", 5, 3);
-                WriteLineAt(@" /  ___//    \_/ __ \|  |/ /", 5, 4);
-                WriteLineAt(@" \___ \|   |  \  ___/|    < ", 5, 5);
-                WriteLineAt(@"/____  >___|  /\___  >__|_ \", 5, 6);
-                WriteLineAt(@"     \/     \/     \/     \/", 5, 7);
-                WriteLineAt($"v2.0 -- by Jason Morejon", 13, 8);
-                WriteLineAt(" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", 3, 9);
+                WriteLineAt(@"                      __    ", 5, 4);
+                WriteLineAt(@"  ______ ____   ____ |  | __", 5, 5);
+                WriteLineAt(@" /  ___//    \_/ __ \|  |/ /", 5, 6);
+                WriteLineAt(@" \___ \|   |  \  ___/|    < ", 5, 7);
+                WriteLineAt(@"/____  >___|  /\___  >__|_ \", 5, 8);
+                WriteLineAt(@"     \/     \/     \/     \/", 5, 9);
+                WriteLineAt($"v2.0 -- by Jason Morejon", 13, 10);
+                WriteLineAt(" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", 3, 11);
                 WriteLineAt("Press any key to begin!", 5, 22);
 
                 Walls();
@@ -316,13 +316,13 @@ namespace snek
             {
                 if (walls)
                 {
-                    WriteLineAt("#########################################", 1, 1);
-                    for (int i = 2; i < (windowY - 1); i++)
+                    WriteLineAt("#########################################", 1, 2);
+                    for (int i = 3; i < (26); i++)
                     {
                         PutCharAt('#', 1, i);
                         PutCharAt('#', (windowX - 1), i);
                     }
-                    WriteLineAt("#########################################", 1, 25);
+                    WriteLineAt("#########################################", 1, 26);
                 }
             }
 
@@ -331,7 +331,7 @@ namespace snek
             {
                 if (walls)
                 {
-                    if ((x == 1) || (x == (windowX - 1)) || (y == 1) || (y == (windowY - 1)))
+                    if ((x == 1) || (x == (windowX - 1)) || (y == 1) || (y == 25))
                     {                        
                         return true;
                     }

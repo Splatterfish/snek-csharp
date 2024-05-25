@@ -1,0 +1,15 @@
+C:\Users\Jason\Source\Repos\Splatterfish\snek-csharp\bin\Debug\net7.0\snek.exe
+C:\Users\Jason\Source\Repos\Splatterfish\snek-csharp\bin\Debug\net7.0\snek.deps.json
+C:\Users\Jason\Source\Repos\Splatterfish\snek-csharp\bin\Debug\net7.0\snek.runtimeconfig.json
+C:\Users\Jason\Source\Repos\Splatterfish\snek-csharp\bin\Debug\net7.0\snek.dll
+C:\Users\Jason\Source\Repos\Splatterfish\snek-csharp\bin\Debug\net7.0\snek.pdb
+C:\Users\Jason\Source\Repos\Splatterfish\snek-csharp\obj\Debug\net7.0\snek.csproj.AssemblyReference.cache
+C:\Users\Jason\Source\Repos\Splatterfish\snek-csharp\obj\Debug\net7.0\snek.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jason\Source\Repos\Splatterfish\snek-csharp\obj\Debug\net7.0\snek.AssemblyInfoInputs.cache
+C:\Users\Jason\Source\Repos\Splatterfish\snek-csharp\obj\Debug\net7.0\snek.AssemblyInfo.cs
+C:\Users\Jason\Source\Repos\Splatterfish\snek-csharp\obj\Debug\net7.0\snek.csproj.CoreCompileInputs.cache
+C:\Users\Jason\Source\Repos\Splatterfish\snek-csharp\obj\Debug\net7.0\snek.dll
+C:\Users\Jason\Source\Repos\Splatterfish\snek-csharp\obj\Debug\net7.0\refint\snek.dll
+C:\Users\Jason\Source\Repos\Splatterfish\snek-csharp\obj\Debug\net7.0\snek.pdb
+C:\Users\Jason\Source\Repos\Splatterfish\snek-csharp\obj\Debug\net7.0\snek.genruntimeconfig.cache
+C:\Users\Jason\Source\Repos\Splatterfish\snek-csharp\obj\Debug\net7.0\ref\snek.dll
