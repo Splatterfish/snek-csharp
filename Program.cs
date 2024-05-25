@@ -7,7 +7,7 @@ namespace snek
 {
     internal class Program
     {
-        string gameVersion = "2.0";
+        string gameVersion = "2.1";
 
         static void Main(string[] args)
         {
@@ -28,7 +28,7 @@ namespace snek
             // Set the console window size (width, height)
             Console.SetWindowSize(windowX, windowY);
             Console.SetBufferSize(windowX, windowY);
-            Console.Title = "snek 2.0";
+            Console.Title = "snek 2.1";
 
             // Clear the console
             Console.Clear();
@@ -80,7 +80,7 @@ namespace snek
                 WriteLineAt(@" \___ \|   |  \  ___/|    < ", 5, 7);
                 WriteLineAt(@"/____  >___|  /\___  >__|_ \", 5, 8);
                 WriteLineAt(@"     \/     \/     \/     \/", 5, 9);
-                WriteLineAt($"v2.0 -- by Jason Morejon", 13, 10);
+                WriteLineAt($"v2.1 -- by Jason Morejon", 13, 10);
                 WriteLineAt(" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", 3, 11);
                 WriteLineAt("Press any key to begin!", 5, 22);
 
