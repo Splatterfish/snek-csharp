@@ -7,6 +7,7 @@ namespace snek
 {
     internal class Program
     {
+        // implement this so you don't have to "version up" in multiple places
         string gameVersion = "2.2";
 
         static void Main(string[] args)
@@ -28,7 +29,7 @@ namespace snek
             // Set the console window size (width, height)
             Console.SetWindowSize(windowX, windowY);
             Console.SetBufferSize(windowX, windowY);
-            Console.Title = "snek 2.2";
+            Console.Title = $"snek v{gameVersion}";
 
             // Clear the console
             Console.Clear();
@@ -83,7 +84,7 @@ namespace snek
                 WriteLineAt(@" \___ \|   |  \  ___/|    < ", 5, 7);
                 WriteLineAt(@"/____  >___|  /\___  >__|_ \", 5, 8);
                 WriteLineAt(@"     \/     \/     \/     \/", 5, 9);
-                WriteLineAt($"v2.2 -- by Jason Morejon", 13, 10);
+                WriteLineAt($"v{gameVersion} -- by Jason Morejon", 13, 10);
                 WriteLineAt(" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", 3, 11);
                 WriteLineAt("Press any key to begin!", 5, 22);
 
@@ -101,6 +102,10 @@ namespace snek
                 Thread.Sleep(1000);
                 Console.Clear();
 
+                // PHASE 2 IDEA- WALLS ARE OPTIONAL
+                // add Console.Readkey() to determine if walls
+                // if !walls, you'll have to add wraparound logic into UpdatePostion(), which should really just be "if (posX==1){posX=screenX}; if (posY==screenY){posY=1}; etc
+                
                 if (walls)
                 {
                     Walls();
@@ -125,36 +130,36 @@ namespace snek
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-            
+            // The Game Loop
             void Update()
             {
-                // increase game speed up until the point when it would break, then stop
-                if (bodycount > 30)
+                // increase game speed based on body length up until the point when it would break, then plateau
+                if (bodycount > 48)
                 {
                     gameSpeed = 10;
                 }
                 else
                 {
-                    int bodytens = bodycount * 8;     
+                    int bodytens = bodycount * 5;     
                     gameSpeed = 250 - bodytens;
                 }
-                
+
+                // fresh start
                 Console.Clear();
 
-                // draw walls
-                if (walls)
-                {
-                    Walls();
-                }
+                // draw walls (if applicable)
+                Walls();
                 
                 // draw snake
                 RenderSnake(bodycount, coordinates);
 
-                // find direction and apply movement
+                // find new direction if applicable
                 InputCheck(keyInfo, ref moveInput);
+
+                // apply movement by adding future position of snake head into list 
                 UpdatePosition(keyInfo, moveInput, coordinates);
                 
-                // fruit collision
+                // look for fruit collision and handle that
                 FruitCheck(coordinates[0], ref fruitList, ref bodycount);
 
                 // new fruit generation
@@ -168,9 +173,9 @@ namespace snek
                     fruitTimer = 0;
                 }
 
-                // draw fruit
+                // draw fruit 
                 RenderFruit(fruitList);
-
+                
             }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
