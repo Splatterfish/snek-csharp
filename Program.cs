@@ -7,7 +7,7 @@ namespace snek
 {
     internal class Program
     {
-        string gameVersion = "2.1";
+        string gameVersion = "2.2";
 
         static void Main(string[] args)
         {
@@ -28,14 +28,17 @@ namespace snek
             // Set the console window size (width, height)
             Console.SetWindowSize(windowX, windowY);
             Console.SetBufferSize(windowX, windowY);
-            Console.Title = "snek 2.1";
+            Console.Title = "snek 2.2";
 
             // Clear the console
             Console.Clear();
 
             //invoke the init/splash
             SplashScreen();
-            
+
+            //as long as you don't press ESC...
+            //or break either of collision rules...
+            //the game loops. otherwise it ends
             do
             {
                 while (!Console.KeyAvailable)
@@ -80,7 +83,7 @@ namespace snek
                 WriteLineAt(@" \___ \|   |  \  ___/|    < ", 5, 7);
                 WriteLineAt(@"/____  >___|  /\___  >__|_ \", 5, 8);
                 WriteLineAt(@"     \/     \/     \/     \/", 5, 9);
-                WriteLineAt($"v2.1 -- by Jason Morejon", 13, 10);
+                WriteLineAt($"v2.2 -- by Jason Morejon", 13, 10);
                 WriteLineAt(" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", 3, 11);
                 WriteLineAt("Press any key to begin!", 5, 22);
 
@@ -125,14 +128,25 @@ namespace snek
             
             void Update()
             {
-                int bodytens = bodycount * 10;
-                gameSpeed = 250 - bodytens;
-
+                // increase game speed up until the point when it would break, then stop
+                if (bodycount > 30)
+                {
+                    gameSpeed = 10;
+                }
+                else
+                {
+                    int bodytens = bodycount * 8;     
+                    gameSpeed = 250 - bodytens;
+                }
+                
                 Console.Clear();
 
                 // draw walls
-                Walls();
-
+                if (walls)
+                {
+                    Walls();
+                }
+                
                 // draw snake
                 RenderSnake(bodycount, coordinates);
 
