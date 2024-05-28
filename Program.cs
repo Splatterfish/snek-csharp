@@ -7,11 +7,10 @@ namespace snek
 {
     internal class Program
     {
-        // implement this so you don't have to "version up" in multiple places
-        string gameVersion = "2.2";
 
         static void Main(string[] args)
         {
+            string gameVersion = "2.2";
             int windowX = 42;
             int windowY = 27;
             int bodycount = 0;
@@ -24,7 +23,6 @@ namespace snek
             bool walls;
             bool gameOn = true;
             int gameSpeed;
-
 
             // Set the console window size (width, height)
             Console.SetWindowSize(windowX, windowY);
